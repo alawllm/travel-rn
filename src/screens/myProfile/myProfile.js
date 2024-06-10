@@ -12,8 +12,9 @@ export const MyProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: "flex-start",
+    alignItems: "left",
     padding: 16,
+    backgroundColor: "white",
   },
 });

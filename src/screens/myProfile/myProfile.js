@@ -1,12 +1,11 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { StyleSheet } from "react-native";
-import { Text } from "react-native";
+import { Text, Button, StyleSheet } from "react-native";
 
-
-export const MyProfileScreen = () => {
+export const MyProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Here is my profile!!!</Text>
+      <Text>Here is my profile</Text>
+      <Button title="Home" onPress={() => navigation.navigate("Home")} />
     </SafeAreaView>
   );
 };

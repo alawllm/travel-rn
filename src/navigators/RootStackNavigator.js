@@ -7,7 +7,15 @@ const RootStack = createNativeStackNavigator();
 
 export const RootStackNavigator = () => {
   return (
+    // navigation prop passed to every screen defined in the navigation
     <RootStack.Navigator initialRouteName={Route.HOME}>
+      <RootStack.Screen
+        name={Route.HOME}
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
       <RootStack.Screen
         name={Route.MYPROFILE}
         component={MyProfileScreen}
@@ -15,7 +23,6 @@ export const RootStackNavigator = () => {
           headerShown: false,
         }}
       />
-      <RootStack.Screen name={Route.HOME} component={HomeScreen} />
     </RootStack.Navigator>
   );
 };

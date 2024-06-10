@@ -9,6 +9,7 @@ export const HomeScreen = ({ navigation }) => {
         title="Go to my profile"
         onPress={() => navigation.navigate("myProfile")}
       />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
     </SafeAreaView>
   );
 };

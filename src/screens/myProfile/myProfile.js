@@ -6,6 +6,7 @@ export const MyProfileScreen = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <Text>Here is my profile</Text>
       <Button title="Home" onPress={() => navigation.navigate("Home")} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
     </SafeAreaView>
   );
 };

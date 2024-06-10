@@ -1,1 +1,1 @@
-export * from './RootStackNavigator'
+export * from './BottomTabNavigator'

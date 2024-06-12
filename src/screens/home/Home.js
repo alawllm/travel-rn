@@ -1,20 +1,22 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
+import { globalStyles } from "../../shared/styles";
 
 export const HomeScreen = () => {
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello in the home view</Text>
+    <SafeAreaView style={globalStyles.container}>
+      <Text style={globalStyles.regularText}>Hello, Margaret</Text>
+      <Text style={globalStyles.regularText}>Where do you want to go?</Text>
+      {/* Here search field */}
+      <Text style={globalStyles.mediumText}>Popular destinations</Text>
+      <Text style={globalStyles.mediumText}>Recommendation</Text>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "flex-start",
-    alignItems: "left",
-    padding: 16,
-    backgroundColor: 'white'
-  },
-});
+//  style={{
+//     fontFamily: Platform.select({
+//       android: 'Inter_100Thin',
+//       ios: 'Inter-Thin',
+//     })

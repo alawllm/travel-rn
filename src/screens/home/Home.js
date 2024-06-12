@@ -1,22 +1,43 @@
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text } from "react-native";
+import { Text, FlatList } from "react-native";
 import { globalStyles } from "../../shared/styles";
+import { Input } from "../../shared/components";
+
+const options = ["option 1", "option 2", "option 3"];
 
 export const HomeScreen = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredOptions, setFilteredOptions] = useState(options);
+
+  const handleSearch = (text) => {
+    setSearchValue(text);
+    const filtered = options.filter((option) =>
+      option.toLowerCase().includes(text.toLowerCase())
+    );
+    setFilteredOptions(filtered);
+  };
 
   return (
     <SafeAreaView style={globalStyles.container}>
       <Text style={globalStyles.regularText}>Hello, Margaret</Text>
       <Text style={globalStyles.regularText}>Where do you want to go?</Text>
-      {/* Here search field */}
+      <Input
+        placeholder="Search"
+        value={searchValue}
+        onChangeText={handleSearch}
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
       <Text style={globalStyles.mediumText}>Popular destinations</Text>
+      <FlatList
+        data={filteredOptions}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <Text style={globalStyles.mediumText}>{item}</Text>
+        )}
+      />
       <Text style={globalStyles.mediumText}>Recommendation</Text>
     </SafeAreaView>
   );
 };
-
-//  style={{
-//     fontFamily: Platform.select({
-//       android: 'Inter_100Thin',
-//       ios: 'Inter-Thin',
-//     })

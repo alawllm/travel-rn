@@ -7,15 +7,13 @@ export const globalStyles = StyleSheet.create({
     alignItems: "left",
     padding: 16,
     backgroundColor: "white",
-    gap: 30,
+    gap: 10,
     padding: 16,
-    fontSize: 24,
-    lineHeight: 32,
     color: "#a9a9a9",
   },
   regularText: {
     fontFamily: "Lexend_400Regular",
-    fontSize: 16,
+    fontSize: 14,
   },
   mediumText: {
     fontFamily: "Lexend_500Medium",

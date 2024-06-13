@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, FlatList } from "react-native";
 import { globalStyles } from "../../shared/styles";
-import { Input } from "../../shared/components";
+import { Input, Header } from "../../shared/components";
+import { TileHorizontal, TileList } from "./components";
 
 const options = ["option 1", "option 2", "option 3"];
 
@@ -29,15 +30,16 @@ export const HomeScreen = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <Text style={globalStyles.mediumTextBigger}>Popular destinations</Text>
+      <Header text={"Popular destinations"} />
       <FlatList
         data={filteredOptions}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <Text style={globalStyles.mediumText}>{item}</Text>
+          <TileHorizontal/>
         )}
       />
-      <Text style={globalStyles.mediumTextBigger}>Recommendation</Text>
+      <Header text={"Recommendation"} />
+      <TileList/>
     </SafeAreaView>
   );
 };

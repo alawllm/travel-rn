@@ -11,13 +11,21 @@ export const globalStyles = StyleSheet.create({
     padding: 16,
     color: "#a9a9a9",
   },
-  regularText: {
+  regularTextSmall: {
     fontFamily: "Lexend_400Regular",
     fontSize: 14,
   },
-  mediumText: {
+  regularTextMedium: {
+    fontFamily: "Lexend_500Medium",
+    fontSize: 14,
+  },
+  mediumTextSmall: {
     fontFamily: "Lexend_500Medium",
     fontSize: 16,
+  },
+  mediumTextBigger: {
+    fontFamily: "Lexend_500Medium",
+    fontSize: 18,
   },
   button: {
     padding: 10,

@@ -20,8 +20,8 @@ export const HomeScreen = () => {
 
   return (
     <SafeAreaView style={globalStyles.container}>
-      <Text style={globalStyles.regularText}>Hello, Margaret</Text>
-      <Text style={globalStyles.regularText}>Where do you want to go?</Text>
+      <Text style={globalStyles.regularTextSmall}>Hello, Margaret</Text>
+      <Text style={globalStyles.mediumTextSmall}>Where do you want to go?</Text>
       <Input
         placeholder="Search"
         value={searchValue}
@@ -29,7 +29,7 @@ export const HomeScreen = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <Text style={globalStyles.mediumText}>Popular destinations</Text>
+      <Text style={globalStyles.mediumTextBigger}>Popular destinations</Text>
       <FlatList
         data={filteredOptions}
         keyExtractor={(item, index) => index.toString()}
@@ -37,7 +37,7 @@ export const HomeScreen = () => {
           <Text style={globalStyles.mediumText}>{item}</Text>
         )}
       />
-      <Text style={globalStyles.mediumText}>Recommendation</Text>
+      <Text style={globalStyles.mediumTextBigger}>Recommendation</Text>
     </SafeAreaView>
   );
 };

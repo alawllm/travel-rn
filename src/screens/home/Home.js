@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Text, FlatList } from "react-native";
+import React, { useState } from "react";
+import { Text, FlatList, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { globalStyles } from "../../shared/styles";
 import { Input, Header } from "../../shared/components";
 import { TileHorizontal, TileList } from "./components";
-import { popularDestinations } from "../../shared/data";
+import { popularDestinations, recommendation } from "../../shared/data";
 
 export const HomeScreen = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -12,7 +12,7 @@ export const HomeScreen = () => {
 
   const handleSearch = (text) => {
     setSearchValue(text);
-    const filtered = data.filter(({ title }) =>
+    const filtered = popularDestinations.filter(({ title }) =>
       title.toLowerCase().includes(text.toLowerCase())
     );
     setFilteredOptions(filtered);
@@ -36,9 +36,17 @@ export const HomeScreen = () => {
         renderItem={({ item }) => <TileHorizontal option={item} />}
         horizontal
         showsHorizontalScrollIndicator={false}
+        contentContainerStyle={globalStyles.flatListHorizontal}
       />
       <Header text={"Recommendation"} />
-      <TileList />
+      <FlatList
+        data={recommendation}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => <TileList option={item} />}
+        showsVerticalScrollIndicator={false}
+        vertical
+        contentContainerStyle={globalStyles.flatListVertical}
+      />
     </SafeAreaView>
   );
 };

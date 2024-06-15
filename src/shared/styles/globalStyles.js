@@ -2,15 +2,10 @@ import { StyleSheet } from "react-native";
 
 export const globalStyles = StyleSheet.create({
   container: {
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "left",
-    padding: 16,
+    flex: 1,
+    padding: 15,
     backgroundColor: "white",
-    gap: 10,
-    padding: 16,
-    color: "#a9a9a9",
-    height: "100%",
+    color: "#a9a9a9"
   },
   regularTextSmall: {
     fontFamily: "Lexend_400Regular",
@@ -35,11 +30,6 @@ export const globalStyles = StyleSheet.create({
   boldTextSmallPurple: {
     fontFamily: "Lexend_700Bold",
     fontSize: 16,
-    color: '#a020f0'
-  },
-  button: {
-    padding: 10,
-    backgroundColor: "#007bff",
-    borderRadius: 5,
-  },
+    color: "#a020f0",
+  }
 });

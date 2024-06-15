@@ -29,13 +29,12 @@ export const TileHorizontal = ({ option }) => {
 
 const styles = StyleSheet.create({
   outerContainer: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "center",
     padding: 16,
     backgroundColor: "#add8e6",
     gap: 10,
-    height: 295,
+    height: 300,
     width: 300,
     borderRadius: 20,
     marginRight: 20,

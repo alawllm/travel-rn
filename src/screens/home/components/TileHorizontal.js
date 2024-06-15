@@ -1,14 +1,29 @@
-import { Text, View } from "react-native";
-import { StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { globalStyles } from "../../../shared/styles";
 
-export const TileHorizontal = ({option}) => {
+export const TileHorizontal = ({ option }) => {
   return (
-    <View style={styles.outerContainer}>
+    <ImageBackground
+      style={styles.outerContainer}
+      source={{ uri: option.img }}
+      imageStyle={{ borderRadius: 20 }}>
       <View style={styles.innerTile}>
-        <Text>{option}</Text>
+        <View style={styles.horizontalContainer}>
+          <Text style={globalStyles.boldTextSmall}>{option.title}</Text>
+          <Text>
+            <Text style={globalStyles.boldTextSmallPurple}>
+              ${option.pricePerNight}
+            </Text>
+            <Text>/person</Text>
+          </Text>
+        </View>
+        <Text>{option.location}</Text>
+        <Text>
+          <Text>{option.rating}</Text>
+          <Text> ({option.numReviews} Reviews)</Text>
+        </Text>
       </View>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -33,8 +48,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderRadius: 20,
     position: "absolute",
-    left: 15,
+    left: 10,
     bottom: 15,
     padding: 15,
+    display: "flex",
+  },
+  horizontalContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+    paddingBottom: 8
   },
 });

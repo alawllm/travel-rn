@@ -6,12 +6,14 @@ import {
   useFonts,
   Lexend_400Regular,
   Lexend_500Medium,
+  Lexend_700Bold
 } from "@expo-google-fonts/lexend";
 
 export default function App() {
    let [fontsLoaded] = useFonts({
      Lexend_400Regular,
      Lexend_500Medium,
+     Lexend_700Bold
    });
 
    if (!fontsLoaded) {

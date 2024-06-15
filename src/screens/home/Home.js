@@ -32,14 +32,14 @@ export const HomeScreen = () => {
       />
       <Header text={"Popular destinations"} />
       <FlatList
-        data={filteredOptions}
+        data={filteredOptions} 
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <TileHorizontal/>
-        )}
+        renderItem={({ item }) => <TileHorizontal option={item} />}
+        horizontal
+        showsHorizontalScrollIndicator={false}
       />
       <Header text={"Recommendation"} />
-      <TileList/>
+      <TileList />
     </SafeAreaView>
   );
 };

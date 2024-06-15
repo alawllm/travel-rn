@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     gap: 8,
+    width: "100%",
   },
   textLabel: {
     color: "#A1A1A1",

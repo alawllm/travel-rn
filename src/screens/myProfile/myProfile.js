@@ -7,7 +7,7 @@ const data = userData[0];
 
 export const MyProfileScreen = () => {
   return (
-    <SafeAreaView style={globalStyles.container}>
+    <SafeAreaView style={[globalStyles.container, { gap: 25 }]}>
       <Text style={globalStyles.boldTextLarge}>My profile</Text>
       <View style={globalStyles.horizontalContainer}>
         <Image
@@ -21,8 +21,10 @@ export const MyProfileScreen = () => {
           <Text style={globalStyles.regularTextSmall}>{data.email}</Text>
         </View>
       </View>
-      <Text style={globalStyles.mediumTextBigger}>Darkmode</Text>
-      <Text style={globalStyles.mediumTextBigger}>Logout</Text>
+      <View style={[globalStyles.container, {gap: 10}]}>
+        <Text style={globalStyles.regularTextSmall}>Darkmode</Text>
+        <Text style={globalStyles.regularTextSmallRed}>Logout</Text>
+      </View>
     </SafeAreaView>
   );
 };

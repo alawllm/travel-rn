@@ -2,14 +2,14 @@ import { StyleSheet } from "react-native";
 
 export const globalStyles = StyleSheet.create({
   container: {
-    padding: 15,
-    backgroundColor: "white",
-    color: "#a9a9a9",
-    gap: 8,
-    height: 'auto'
+    padding: 20,
+    gap: 5,
+    height: "auto",
   },
   horizontalContainer: {
     display: "flex",
+    alignContent: 'space-between',
+    height: 'auto',
     flexDirection: "row",
     gap: 10,
   },
@@ -19,6 +19,11 @@ export const globalStyles = StyleSheet.create({
     width: 48,
   },
   regularTextSmall: {
+    fontFamily: "Lexend_400Regular",
+    fontSize: 14,
+  },
+  regularTextSmallRed: {
+   color: '#FF0000',
     fontFamily: "Lexend_400Regular",
     fontSize: 14,
   },

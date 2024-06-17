@@ -2,10 +2,20 @@ import { StyleSheet } from "react-native";
 
 export const globalStyles = StyleSheet.create({
   container: {
-    flex: 1,
     padding: 15,
     backgroundColor: "white",
-    color: "#a9a9a9"
+    color: "#a9a9a9",
+    gap: 8,
+  },
+  horizontalContainer: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 10,
+  },
+  imgRound: {
+    borderRadius: 24,
+    height: 48,
+    width: 48,
   },
   regularTextSmall: {
     fontFamily: "Lexend_400Regular",

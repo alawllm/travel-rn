@@ -34,15 +34,15 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     padding: 4,
     gap: 5,
-    height: 128,
+    height: 100,
     width: "100%",
-    borderRadius: 20,
-    padding: 15,
+    borderRadius: 5,
     position: "relative",
   },
   img: {
     height: 80,
     width: 80,
+    borderRadius: 5
   },
   innerContainer: {
     height: 80,

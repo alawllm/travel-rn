@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Text, FlatList, View, Image } from "react-native";
+import { Text, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { globalStyles } from "../../shared/styles";
 import { Input, Header } from "../../shared/components";
-import { TileHorizontal, TileList } from "./components";
+import { TileHorizontal, TileList, IntroGreeting } from "./components";
 import { popularDestinations, recommendation } from "../../shared/data";
 import { userData } from "../../shared/data";
 
@@ -18,24 +18,12 @@ export const HomeScreen = () => {
     );
     setFilteredOptions(filtered);
   };
-  // add error states
   // add useContext
   // add icons
   // add darkmode
   return (
     <SafeAreaView style={globalStyles.container}>
-      <View style={globalStyles.horizontalContainer}>
-        <Image
-          style={globalStyles.imgRound}
-          source={{ uri: userData[0].profilePic }}
-        />
-        <View>
-          <Text style={globalStyles.regularTextSmall}>Hello, Margaret</Text>
-          <Text style={globalStyles.mediumTextSmall}>
-            Where do you want to go?
-          </Text>
-        </View>
-      </View>
+      <IntroGreeting styles={globalStyles} data={userData} />
       <Input
         placeholder="Search"
         value={searchValue}

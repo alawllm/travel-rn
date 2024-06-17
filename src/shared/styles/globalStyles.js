@@ -6,6 +6,7 @@ export const globalStyles = StyleSheet.create({
     backgroundColor: "white",
     color: "#a9a9a9",
     gap: 8,
+    height: 'auto'
   },
   horizontalContainer: {
     display: "flex",
@@ -37,9 +38,13 @@ export const globalStyles = StyleSheet.create({
     fontFamily: "Lexend_700Bold",
     fontSize: 16,
   },
+  boldTextLarge: {
+    fontFamily: "Lexend_700Bold",
+    fontSize: 24,
+  },
   boldTextSmallPurple: {
     fontFamily: "Lexend_700Bold",
     fontSize: 16,
     color: "#a020f0",
-  }
+  },
 });

@@ -6,19 +6,20 @@ import {
   useFonts,
   Lexend_400Regular,
   Lexend_500Medium,
-  Lexend_700Bold
+  Lexend_700Bold,
 } from "@expo-google-fonts/lexend";
+import { useColorScheme } from "react-native";
 
 export default function App() {
-   let [fontsLoaded] = useFonts({
-     Lexend_400Regular,
-     Lexend_500Medium,
-     Lexend_700Bold
-   });
+  let [fontsLoaded] = useFonts({
+    Lexend_400Regular,
+    Lexend_500Medium,
+    Lexend_700Bold,
+  });
 
-   if (!fontsLoaded) {
-     return <AppLoading />;
-   }
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <NavigationContainer>
       <SafeAreaProvider>

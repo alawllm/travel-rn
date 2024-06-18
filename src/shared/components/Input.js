@@ -1,32 +1,37 @@
+import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
+import { SearchIcon } from "../../../assets/icons/SearchIcon";
 
-export const Input = ({ label, ...rest }) => {
+export const Input = ({ ...rest }) => {
   return (
     <View style={styles.inputContainer}>
-      <Text style={styles.textLabel}>{label}</Text>
-      <TextInput
-        style={styles.input}
-        {...rest}
-      />
+      <View style={styles.inputWrapper}>
+        <SearchIcon size={26} style={styles.icon} />
+        <TextInput style={styles.input} {...rest} />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  inputContainer: {
+    width: "100%",
+  },
+  inputWrapper: {
+    position: "relative",
+    justifyContent: "center",
+  },
   input: {
     borderWidth: 1,
     borderRadius: 8,
-    paddingHorizontal: 16,
+    paddingHorizontal: 40,
     paddingVertical: 12,
     borderColor: "#DFDFDF",
     color: "#080613",
     height: 48,
   },
-  inputContainer: {
-    width: "100%",
-  },
-  textLabel: {
-    color: "#A1A1A1",
-    fontSize: 14,
+  icon: {
+    position: "absolute",
+    left: 12
   },
 });

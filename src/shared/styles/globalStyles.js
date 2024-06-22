@@ -8,10 +8,10 @@ export const globalStyles = StyleSheet.create({
   },
   horizontalContainer: {
     display: "flex",
-    alignContent: 'space-between',
-    height: 'auto',
+    alignContent: "space-between",
+    height: "auto",
     flexDirection: "row",
-    gap: 10,
+    gap: 15,
   },
   imgRound: {
     borderRadius: 24,
@@ -23,7 +23,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 14,
   },
   regularTextSmallRed: {
-   color: '#FF0000',
+    color: "#FF0000",
     fontFamily: "Lexend_400Regular",
     fontSize: 14,
   },

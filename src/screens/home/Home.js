@@ -18,9 +18,7 @@ export const HomeScreen = () => {
     );
     setFilteredOptions(filtered);
   };
-  // add useContext
-  // add icons
-  // add darkmode
+
   return (
     <SafeAreaView style={globalStyles.container}>
       <IntroGreeting styles={globalStyles} data={userData} />

@@ -2,7 +2,7 @@ export const popularDestinations = [
   {
     title: "Saint Moritz",
     location: "Zurich, Switzerland",
-    rating: 5.0,
+    rating: 4.7,
     numReviews: "6k",
     pricePerNight: "1200",
     img: "https://hips.hearstapps.com/hmg-prod/images/walking-on-the-danxia-landform-royalty-free-image-1623252956.jpg?resize=1200:*",
@@ -18,7 +18,7 @@ export const popularDestinations = [
   {
     title: "Hirschberg",
     location: "Trippi, Switzerland",
-    rating: 5.0,
+    rating: 4.8,
     numReviews: "5k",
     pricePerNight: "1400",
     img: "https://i.insider.com/5a271fbd7101ad7b9647b9dc?width=700&format=jpeg&auto=webp",

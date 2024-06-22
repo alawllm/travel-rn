@@ -1,13 +1,19 @@
 import React from "react";
 import { View, TextInput, StyleSheet } from "react-native";
 import { SearchIcon } from "../../../assets/icons";
+import { useTheme } from "../providers";
 
 export const Input = ({ ...rest }) => {
+  const { themeStyles, theme } = useTheme();
   return (
     <View style={styles.inputContainer}>
       <View style={styles.inputWrapper}>
         <SearchIcon size={26} style={styles.icon} />
-        <TextInput style={styles.input} {...rest} />
+        <TextInput
+          style={[styles.input, themeStyles.text]}
+          placeholderTextColor={theme === 'dark' ? 'white' : '#080613'}
+          {...rest}
+        />
       </View>
     </View>
   );

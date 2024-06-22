@@ -1,7 +1,10 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { globalStyles } from "../../../shared/styles";
+import { useTheme } from "../../../shared/providers";
 
 export const TileList = ({ option }) => {
+  const { themeStyles } = useTheme();
+
   return (
     <View style={styles.outerContainer}>
       <Image
@@ -10,17 +13,31 @@ export const TileList = ({ option }) => {
         imageStyle={{ borderRadius: 20 }}
       />
       <View style={styles.innerContainer}>
-        <Text style={globalStyles.boldTextSmall}>{option.title}</Text>
+        <Text style={[globalStyles.boldTextSmall,themeStyles.text]}>
+          {option.title}
+        </Text>
         <Text>
-          <Text style={globalStyles.boldTextSmallPurple}>
+          <Text
+            style={[globalStyles.boldTextSmallPurple, themeStyles.text]}>
             ${option.pricePerNight}
           </Text>
-          <Text>/person</Text>
+          <Text
+            style={[globalStyles.regularTextSmall, themeStyles.text ]}>
+            /person
+          </Text>
         </Text>
-        <Text>{option.location}</Text>
+        <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+          {option.location}
+        </Text>
         <Text>
-          <Text>{option.rating}</Text>
-          <Text> ({option.numReviews} Reviews)</Text>
+          <Text
+            style={[globalStyles.regularTextSmall, themeStyles.text ]}>
+            {option.rating}
+          </Text>
+          <Text
+            style={[globalStyles.regularTextSmall, themeStyles.text] }>
+            ({option.numReviews} Reviews)
+          </Text>
         </Text>
       </View>
     </View>
@@ -33,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: "left",
     justifyContent: "flex-start",
     padding: 4,
-    gap: 5,
+    gap: 15,
     height: 100,
     width: "100%",
     borderRadius: 5,
@@ -42,7 +59,7 @@ const styles = StyleSheet.create({
   img: {
     height: 80,
     width: 80,
-    borderRadius: 5
+    borderRadius: 5,
   },
   innerContainer: {
     height: 80,

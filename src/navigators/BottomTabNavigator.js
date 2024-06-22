@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Route } from "../shared/constants";
 import { MyProfileScreen, HomeScreen } from "../screens";
 import { HomeIcon, ProfileIcon } from "../../assets/icons";
+import { useTheme } from "../shared/providers";
 
 const Tab = createBottomTabNavigator();
 

@@ -3,13 +3,15 @@ import { Text, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { globalStyles } from "../../shared/styles";
 import { Input, Header } from "../../shared/components";
-import { TileHorizontal, TileList, IntroGreeting } from "./components";
+import { TileSquare, TileList, IntroGreeting } from "./components";
 import { popularDestinations, recommendation } from "../../shared/data";
 import { userData } from "../../shared/data";
+import { useTheme } from "../../shared/providers";
 
 export const HomeScreen = () => {
   const [searchValue, setSearchValue] = useState("");
   const [filteredOptions, setFilteredOptions] = useState(popularDestinations);
+  const {themeStyles} = useTheme()
 
   const handleSearch = (text) => {
     setSearchValue(text);
@@ -20,7 +22,8 @@ export const HomeScreen = () => {
   };
 
   return (
-    <SafeAreaView style={globalStyles.container}>
+    <SafeAreaView
+      style={[globalStyles.container, themeStyles.container]}>
       <IntroGreeting styles={globalStyles} data={userData} />
       <Input
         placeholder="Search"
@@ -35,7 +38,7 @@ export const HomeScreen = () => {
           <FlatList
             data={filteredOptions}
             keyExtractor={(item, index) => index.toString()}
-            renderItem={({ item }) => <TileHorizontal option={item} />}
+            renderItem={({ item }) => <TileSquare option={item} />}
             horizontal
             showsHorizontalScrollIndicator={false}
           />

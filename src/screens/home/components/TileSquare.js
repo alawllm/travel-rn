@@ -1,7 +1,9 @@
 import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { globalStyles } from "../../../shared/styles";
+import { useTheme } from "../../../shared/providers";
 
-export const TileHorizontal = ({ option }) => {
+export const TileSquare = ({ option }) => {
+  const { themeStyles } = useTheme();
   return (
     <ImageBackground
       style={styles.outerContainer}
@@ -55,6 +57,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
-    paddingBottom: 8
+    paddingBottom: 8,
   },
 });

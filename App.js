@@ -8,7 +8,7 @@ import {
   Lexend_500Medium,
   Lexend_700Bold,
 } from "@expo-google-fonts/lexend";
-import { useColorScheme } from "react-native";
+import { ThemeProvider } from "./src/shared/providers";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -22,9 +22,11 @@ export default function App() {
   }
   return (
     <NavigationContainer>
-      <SafeAreaProvider>
-        <MyTabs />
-      </SafeAreaProvider>
+      <ThemeProvider>
+        <SafeAreaProvider>
+          <MyTabs />
+        </SafeAreaProvider>
+      </ThemeProvider>
     </NavigationContainer>
   );
 }

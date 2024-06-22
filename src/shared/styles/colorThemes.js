@@ -1,15 +1,21 @@
-const light = {
-  themeColor: "#FFFFFF",
-  white: "#000000",
-  sky: "#DE5E69",
-  gray: "gray",
-};
+import { StyleSheet } from "react-native";
 
-const dark = {
-  themeColor: "#000000",
-  white: "#FFFFFF",
-  sky: "#831a23",
-  gray: "white",
-};
+const lightTheme = StyleSheet.create({
+  container: {
+    backgroundColor: "#ffffff",
+  },
+  text: {
+    color: "#000000",
+  },
+});
 
-export {light, dark}
+const darkTheme = StyleSheet.create({
+  container: {
+    backgroundColor: "#000000",
+  },
+  text: {
+    color: "#ffffff",
+  },
+});
+
+export { lightTheme, darkTheme };

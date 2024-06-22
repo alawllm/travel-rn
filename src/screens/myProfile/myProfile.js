@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Text, Image, View, StyleSheet } from "react-native";
+import { Text, Image, View, StyleSheet, TouchableOpacity } from "react-native";
 import { globalStyles } from "../../shared/styles";
 import { userData } from "../../shared/data";
 import {
@@ -8,72 +8,68 @@ import {
   ToggleOffIcon,
   ToggleOnIcon,
 } from "../../../assets/icons";
+import { useTheme } from "../../shared/providers";
+import { TextWithIcon } from "./components";
 
 const data = userData[0];
 
 export const MyProfileScreen = () => {
+  const { theme, toggleTheme, themeStyles } = useTheme();
+
   return (
-    <SafeAreaView style={[globalStyles.container, { gap: 25 }]}>
-      <Text style={globalStyles.boldTextLarge}>My profile</Text>
-      {/* profile pic container  */}
-      <View style={globalStyles.horizontalContainer}>
+    <SafeAreaView
+      style={[globalStyles.container, themeStyles.container, { gap: 25 }]}>
+      <Text style={[globalStyles.boldTextLarge, themeStyles.text]}>
+        My profile
+      </Text>
+
+      <View style={[globalStyles.horizontalContainer, themeStyles.text]}>
         <Image
           style={globalStyles.imgRound}
           source={{ uri: data.profilePic }}
         />
         <View>
-          <Text style={globalStyles.mediumTextSmall}>
+          <Text style={[globalStyles.mediumTextSmall, themeStyles.text]}>
             {data.name}, {data.surname}
           </Text>
-          <Text style={globalStyles.regularTextSmall}>{data.email}</Text>
+          <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+            {data.email}
+          </Text>
         </View>
       </View>
 
-      <View style={[globalStyles.container, { gap: 10 }]}>
-        {/* dark mode container  */}
+      <View style={[globalStyles.container, themeStyles.text, { gap: 10 }]}>
         <View style={styles.endsWrapper}>
-          <View style={styles.textWithIcon}>
-            <View style={[styles.circleIcon, { backgroundColor: "#d3d3d3" }]}>
-              <EyeIcon size={26} color="black" />
-            </View>
-            <Text style={globalStyles.regularTextSmall}>Dark Mode</Text>
-          </View>
-          <ToggleOffIcon size={50} color="#c6c6c6" />
-        </View>
+          <TextWithIcon
+            circleColor="#d3d3d3"
+            text="Dark mode"
+            textColor={[globalStyles.regularTextSmall, themeStyles.text]}>
+            <EyeIcon size={26} color="black" />
+          </TextWithIcon>
 
-        {/* logout container  */}
-        <View style={styles.textWithIcon}>
-          <View style={[styles.circleIcon, { backgroundColor: "#ffcccb" }]}>
-            <LogoutIcon size={26} color="red" />
-          </View>
-          <Text style={globalStyles.regularTextSmallRed}>Logout</Text>
+          <TouchableOpacity onPress={toggleTheme}>
+            {theme === "dark" ? (
+              <ToggleOnIcon size={50} color="#c6c6c6" />
+            ) : (
+              <ToggleOffIcon size={50} color="#c6c6c6" />
+            )}
+          </TouchableOpacity>
         </View>
+        <TextWithIcon
+          circleColor="#ffcccb"
+          text="Logout"
+          textColor={globalStyles.regularTextSmallRed}>
+          <LogoutIcon size={26} color="red" />
+        </TextWithIcon>
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  textWithIcon: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    gap: 15,
-    marginBottom: 15,
-    width: "50%",
-  },
   endsWrapper: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-  },
-  circleIcon: {
-    height: 48,
-    width: 48,
-    borderRadius: 24,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
   },
 });

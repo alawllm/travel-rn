@@ -2,8 +2,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Text, Image, View, StyleSheet } from "react-native";
 import { globalStyles } from "../../shared/styles";
 import { userData } from "../../shared/data";
-import { EyeIcon } from "../../../assets/icons/EyeIcon";
-import { LogoutIcon } from "../../../assets/icons/LogoutIcon";
+import { EyeIcon, LogoutIcon } from "../../../assets/icons/EyeIcon";
 
 const data = userData[0];
 
@@ -26,13 +25,13 @@ export const MyProfileScreen = () => {
       <View style={[globalStyles.container, { gap: 10 }]}>
         <View style={styles.textWithIcon}>
           <View style={[styles.circleIcon, { backgroundColor: "#d3d3d3" }]}>
-            <EyeIcon size={26} color='black' />
+            <EyeIcon size={26} color="black" />
           </View>
           <Text style={globalStyles.regularTextSmall}>Dark Mode</Text>
         </View>
         <View style={styles.textWithIcon}>
           <View style={[styles.circleIcon, { backgroundColor: "#ffcccb" }]}>
-            <LogoutIcon size={26} color='red' />
+            <LogoutIcon size={26} color="red" />
           </View>
           <Text style={globalStyles.regularTextSmallRed}>Logout</Text>
         </View>
@@ -54,8 +53,8 @@ const styles = StyleSheet.create({
     height: 48,
     width: 48,
     borderRadius: 24,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

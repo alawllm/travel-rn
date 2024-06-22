@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
-import { SearchIcon } from "../../../assets/icons/SearchIcon";
+import { View, TextInput, StyleSheet } from "react-native";
+import { SearchIcon } from "../../../assets/icons";
 
 export const Input = ({ ...rest }) => {
   return (
@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 12
+    left: 12,
   },
 });

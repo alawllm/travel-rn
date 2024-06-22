@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { globalStyles } from "../../../shared/styles";
 import { useTheme } from "../../../shared/providers";
-import { PinDrop } from "../../../../assets/icons";
+import { PinDrop, StarIcon } from "../../../../assets/icons";
 
 export const TileSquare = ({ option }) => {
   const { themeStyles } = useTheme();
@@ -31,6 +31,7 @@ export const TileSquare = ({ option }) => {
           </Text>
         </View>
         <View style={styles.containerWithIcon}>
+          <StarIcon size={20} color='#ffcc00' />
           <Text>
             <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
               {option.rating}

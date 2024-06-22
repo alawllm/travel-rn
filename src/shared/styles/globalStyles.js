@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const globalStyles = StyleSheet.create({
   container: {
     padding: 20,
-    gap: 5,
+    gap: 7,
     height: "auto",
   },
   horizontalContainer: {

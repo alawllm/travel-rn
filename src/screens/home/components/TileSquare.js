@@ -31,12 +31,11 @@ export const TileSquare = ({ option }) => {
           </Text>
         </View>
         <View style={styles.containerWithIcon}>
-          <StarIcon size={20} color='#ffcc00' />
+          <StarIcon size={20} color="#ffcc00" />
           <Text>
             <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
               {option.rating}
             </Text>
-
             <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
               ({option.numReviews} Reviews)
             </Text>
@@ -78,8 +77,8 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   containerWithIcon: {
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 10
-  }
+    display: "flex",
+    flexDirection: "row",
+    gap: 10,
+  },
 });

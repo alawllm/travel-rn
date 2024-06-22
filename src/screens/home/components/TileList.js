@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { globalStyles } from "../../../shared/styles";
 import { useTheme } from "../../../shared/providers";
+import { PinDrop, StarIcon } from "../../../../assets/icons";
 
 export const TileList = ({ option }) => {
   const { themeStyles } = useTheme();
@@ -17,24 +18,30 @@ export const TileList = ({ option }) => {
           {option.title}
         </Text>
         <Text>
-          <Text style={[globalStyles.boldTextSmallPurple, themeStyles.text]}>
+          <Text style={globalStyles.boldTextSmallPurple}>
             ${option.pricePerNight}
           </Text>
           <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
             /person
           </Text>
         </Text>
-        <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
-          {option.location}
-        </Text>
-        <Text>
+        <View style={styles.containerWithIcon}>
+          <PinDrop size={20} color={themeStyles.text.color} />
           <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
-            {option.rating}
+            {option.location}
           </Text>
-          <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
-            ({option.numReviews} Reviews)
+        </View>
+        <View style={styles.containerWithIcon}>
+          <StarIcon size={20} color="#ffcc00" />
+          <Text>
+            <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+              {option.rating}
+            </Text>
+            <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+              ({option.numReviews} Reviews)
+            </Text>
           </Text>
-        </Text>
+        </View>
       </View>
     </View>
   );
@@ -52,7 +59,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     position: "relative",
     marginBottom: 10,
-    width: '100%'
+    width: "100%",
   },
   img: {
     height: 80,
@@ -65,5 +72,10 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "left",
+  },
+  containerWithIcon: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 10,
   },
 });

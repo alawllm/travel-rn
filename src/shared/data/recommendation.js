@@ -14,5 +14,5 @@ export const recommendation = [
     numReviews: "4k",
     pricePerNight: "1300",
     img: "https://www.trendtours.de/.imaging/focalpoint/default/1024x/dam/jcr:b66d2a31-67d3-4cea-b3c5-24df197de12a/6651_kurlaub_Teneriffa_content_1920x1080px_teneriffa_titel.jpg",
-  },
+  }
 ];

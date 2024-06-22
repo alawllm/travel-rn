@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const lightTheme = StyleSheet.create({
   container: {
-    backgroundColor: "#fafafaf5",
+    backgroundColor: "#f7f7f7f5",
   },
   lighterContainer: {
     backgroundColor: "#ffffff",

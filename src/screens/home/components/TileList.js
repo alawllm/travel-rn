@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     position: "relative",
     marginBottom: 10,
-    width: '95%'
+    width: '100%'
   },
   img: {
     height: 80,

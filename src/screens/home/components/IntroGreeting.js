@@ -18,7 +18,7 @@ export const IntroGreeting = ({ data, styles }) => {
       </View>
       <View
         style={[
-          styles.circleIcon,
+         localStyles.circleIcon,
           {
             backgroundColor: `${themeStyles.lighterContainer.backgroundColor}`,
           },
@@ -29,7 +29,7 @@ export const IntroGreeting = ({ data, styles }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const localStyles = StyleSheet.create({
   circleIcon: {
     height: 48,
     width: 48,

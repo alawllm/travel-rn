@@ -18,7 +18,11 @@ export const MyProfileScreen = () => {
 
   return (
     <SafeAreaView
-      style={[globalStyles.container, themeStyles.container, { gap: 25, height: '100%' }]}>
+      style={[
+        globalStyles.container,
+        themeStyles.container,
+        { gap: 25, height: "100%" },
+      ]}>
       <Text style={[globalStyles.boldTextLarge, themeStyles.text]}>
         My profile
       </Text>
@@ -41,10 +45,10 @@ export const MyProfileScreen = () => {
       <View style={[globalStyles.container, themeStyles.text, { gap: 10 }]}>
         <View style={styles.endsWrapper}>
           <TextWithIcon
-            circleColor="#d3d3d3"
+            circleColor={themeStyles.lighterContainer.backgroundColor}
             text="Dark mode"
-            textColor={[globalStyles.regularTextSmall, themeStyles.text]}>
-            <EyeIcon size={26} color="black" />
+            textStyle={[globalStyles.regularTextSmall, themeStyles.text]}>
+            <EyeIcon size={26} color={themeStyles.text.color} />
           </TextWithIcon>
 
           <TouchableOpacity onPress={toggleTheme}>
@@ -58,7 +62,7 @@ export const MyProfileScreen = () => {
         <TextWithIcon
           circleColor="#ffcccb"
           text="Logout"
-          textColor={globalStyles.regularTextSmallRed}>
+          textStyle={globalStyles.regularTextSmallRed}>
           <LogoutIcon size={26} color="red" />
         </TextWithIcon>
       </View>

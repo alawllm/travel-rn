@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export const TextWithIcon = ({ circleColor, children, text, textColor }) => {
+export const TextWithIcon = ({ circleColor, children, text, textStyle }) => {
   return (
     <View style={styles.textWithIcon}>
       <View style={[styles.circleIcon, { backgroundColor: `${ circleColor }` }]}>
         {children}
       </View>
-      <Text style={textColor}>{text}</Text>
+      <Text style={textStyle}>{text}</Text>
     </View>
   );
 };

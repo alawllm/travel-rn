@@ -1,5 +1,6 @@
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, StyleSheet } from "react-native";
 import { useTheme } from "../../../shared/providers";
+import { BellIcon } from "../../../../assets/icons";
 
 export const IntroGreeting = ({ data, styles }) => {
   const { themeStyles } = useTheme();
@@ -15,6 +16,26 @@ export const IntroGreeting = ({ data, styles }) => {
           Where do you want to go?
         </Text>
       </View>
+      <View
+        style={[
+          styles.circleIcon,
+          {
+            backgroundColor: `${themeStyles.lighterContainer.backgroundColor}`,
+          },
+        ]}>
+        <BellIcon size={26} color={themeStyles.text.color} />
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  circleIcon: {
+    height: 48,
+    width: 48,
+    borderRadius: 24,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

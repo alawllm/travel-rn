@@ -7,6 +7,7 @@ import { useTheme } from "../shared/providers";
 const Tab = createBottomTabNavigator();
 
 export const MyTabs = () => {
+  const { themeStyles } = useTheme();
   return (
     <Tab.Navigator
       initialRouteName={Route.HOME}
@@ -25,6 +26,9 @@ export const MyTabs = () => {
         tabBarActiveTintColor: "purple",
         tabBarInactiveTintColor: "gray",
         headerShown: false,
+        tabBarStyle: {
+          backgroundColor: themeStyles.container.backgroundColor
+        },
       })}>
       <Tab.Screen name={Route.HOME} component={HomeScreen} />
       <Tab.Screen name={Route.MYPROFILE} component={MyProfileScreen} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Text, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { globalStyles } from "../../shared/styles";
@@ -45,7 +45,7 @@ export const HomeScreen = () => {
         </>
       )}
       {filteredOptions.length === 0 && (
-        <Text style={globalStyles.boldTextSmallPurple}>
+        <Text style={[globalStyles.boldTextSmallPurple, {marginBottom: 30}]}>
           Sorry, no destinations found. Try again?
         </Text>
       )}

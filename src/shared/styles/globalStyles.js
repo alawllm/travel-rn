@@ -4,7 +4,7 @@ export const globalStyles = StyleSheet.create({
   container: {
     padding: 20,
     gap: 10,
-    height: "110%",
+    height: "auto",
   },
   horizontalContainer: {
     display: "flex",

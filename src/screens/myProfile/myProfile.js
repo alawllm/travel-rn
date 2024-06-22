@@ -18,7 +18,7 @@ export const MyProfileScreen = () => {
 
   return (
     <SafeAreaView
-      style={[globalStyles.container, themeStyles.container, { gap: 25 }]}>
+      style={[globalStyles.container, themeStyles.container, { gap: 25, height: '100%' }]}>
       <Text style={[globalStyles.boldTextLarge, themeStyles.text]}>
         My profile
       </Text>

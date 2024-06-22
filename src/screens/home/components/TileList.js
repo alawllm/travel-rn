@@ -6,23 +6,21 @@ export const TileList = ({ option }) => {
   const { themeStyles } = useTheme();
 
   return (
-    <View style={styles.outerContainer}>
+    <View style={[styles.outerContainer, themeStyles.lighterContainer]}>
       <Image
         style={styles.img}
         source={{ uri: option.img }}
         imageStyle={{ borderRadius: 20 }}
       />
       <View style={styles.innerContainer}>
-        <Text style={[globalStyles.boldTextSmall,themeStyles.text]}>
+        <Text style={[globalStyles.boldTextSmall, themeStyles.text]}>
           {option.title}
         </Text>
         <Text>
-          <Text
-            style={[globalStyles.boldTextSmallPurple, themeStyles.text]}>
+          <Text style={[globalStyles.boldTextSmallPurple, themeStyles.text]}>
             ${option.pricePerNight}
           </Text>
-          <Text
-            style={[globalStyles.regularTextSmall, themeStyles.text ]}>
+          <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
             /person
           </Text>
         </Text>
@@ -30,12 +28,10 @@ export const TileList = ({ option }) => {
           {option.location}
         </Text>
         <Text>
-          <Text
-            style={[globalStyles.regularTextSmall, themeStyles.text ]}>
+          <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
             {option.rating}
           </Text>
-          <Text
-            style={[globalStyles.regularTextSmall, themeStyles.text] }>
+          <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
             ({option.numReviews} Reviews)
           </Text>
         </Text>
@@ -49,12 +45,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "left",
     justifyContent: "flex-start",
-    padding: 4,
+    alignItems: "center",
+    padding: 10,
     gap: 15,
     height: 100,
-    width: "100%",
-    borderRadius: 5,
+    borderRadius: 10,
     position: "relative",
+    marginBottom: 10,
+    width: '95%'
   },
   img: {
     height: 80,

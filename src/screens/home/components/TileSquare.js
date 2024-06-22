@@ -1,6 +1,7 @@
 import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { globalStyles } from "../../../shared/styles";
 import { useTheme } from "../../../shared/providers";
+import { PinDrop } from "../../../../assets/icons";
 
 export const TileSquare = ({ option }) => {
   const { themeStyles } = useTheme();
@@ -9,21 +10,37 @@ export const TileSquare = ({ option }) => {
       style={styles.outerContainer}
       source={{ uri: option.img }}
       imageStyle={{ borderRadius: 20 }}>
-      <View style={styles.innerTile}>
+      <View style={[styles.innerTile, themeStyles.container]}>
         <View style={styles.horizontalContainer}>
-          <Text style={globalStyles.boldTextSmall}>{option.title}</Text>
+          <Text style={[globalStyles.boldTextSmall, themeStyles.text]}>
+            {option.title}
+          </Text>
           <Text>
             <Text style={globalStyles.boldTextSmallPurple}>
               ${option.pricePerNight}
             </Text>
-            <Text>/person</Text>
+            <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+              / person
+            </Text>
           </Text>
         </View>
-        <Text>{option.location}</Text>
-        <Text>
-          <Text>{option.rating}</Text>
-          <Text> ({option.numReviews} Reviews)</Text>
-        </Text>
+        <View style={styles.containerWithIcon}>
+          <PinDrop size={20} color={themeStyles.text.color} />
+          <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+            {option.location}
+          </Text>
+        </View>
+        <View style={styles.containerWithIcon}>
+          <Text>
+            <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+              {option.rating}
+            </Text>
+
+            <Text style={[globalStyles.regularTextSmall, themeStyles.text]}>
+              ({option.numReviews} Reviews)
+            </Text>
+          </Text>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -59,4 +76,9 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingBottom: 8,
   },
+  containerWithIcon: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 10
+  }
 });
